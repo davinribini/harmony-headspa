@@ -25,10 +25,10 @@ export default function Home() {
 
       <StickyHeader />
 
-      <main className="relative z-10">
+      <main className="relative z-10 w-full overflow-x-hidden">
 
         {/* ── Centered content column ─────────────────────────────────── */}
-        <div className="max-w-6xl mx-auto px-6 md:px-10 pb-10">
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-10 pb-10">
           <Hero />
           <About />
         </div>
@@ -37,7 +37,7 @@ export default function Home() {
         <RitualSteps />
 
         {/* ── Centered content column resumes ─────────────────────────── */}
-        <div className="max-w-6xl mx-auto px-6 md:px-10 pb-10">
+        <div className="w-full max-w-6xl mx-auto px-6 md:px-10 pb-10">
           <EpassiBanner />
           <ServiceGrid />
           <GiftCardSection />

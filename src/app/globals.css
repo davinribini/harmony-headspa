@@ -2,10 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Reset & Haptics ── */
+/* ── Hard mobile clamp — nothing escapes the viewport ── */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #2D2A26;
+  background: #EDE7DA;
+  min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 120px;
+}
+
+/* ── Reset ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-body { font-family: 'Inter', sans-serif; color: #2D2A26; background: #EDE7DA; min-height: 100vh; overflow-x: hidden; padding-bottom: 120px; }
+
+/* ── All images/media are responsive by default ── */
+img, video, svg { max-width: 100%; }
 
 /* ── Scroll Reveal ── */
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); }

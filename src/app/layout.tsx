@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 
@@ -16,6 +16,17 @@ const inter = Inter({
   variable: '--font-inter',
   display: 'swap',
 })
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Viewport — locks mobile scale, prevents horizontal blowout
+// ─────────────────────────────────────────────────────────────────────────────
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Metadata — Next.js 14 static export
@@ -92,8 +103,6 @@ export const metadata: Metadata = {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Schema.org — HealthAndBeautyBusiness JSON-LD
-// Lars Forssells gata 24, 112 15 Stockholm (Hornsberg, Kungsholmen)
-// Geo: approximate centroid for Hornsberg waterfront, Stockholm
 // ─────────────────────────────────────────────────────────────────────────────
 
 const jsonLd = {
@@ -140,14 +149,14 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sv" className={`${playfair.variable} ${inter.variable}`}>
+    <html lang="sv" className={`${playfair.variable} ${inter.variable} overflow-x-hidden`}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="font-sans overflow-x-hidden">
+      <body className="font-sans w-full overflow-x-hidden">
         {children}
       </body>
     </html>
