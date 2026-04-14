@@ -61,7 +61,7 @@ export default function Testimonials() {
                 style={{ color: '#C9A96E', opacity: 0.35, fontSize: 56, lineHeight: 1 }}
                 aria-hidden
               >
-                "
+                {'\u201C'}
               </p>
 
               {/* Quote text */}
