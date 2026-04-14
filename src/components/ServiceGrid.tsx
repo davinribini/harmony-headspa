@@ -221,7 +221,7 @@ function DuoCard({ service }: { service: Service }) {
 function SectionHeader({ title, tag }: { title: string; tag: string }) {
   return (
     <motion.div
-      className="mb-12 md:mb-16"
+      className="mb-12 md:mb-16 text-center md:text-left flex flex-col items-center md:items-start"
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}

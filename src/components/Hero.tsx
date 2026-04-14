@@ -10,12 +10,12 @@ export default function Hero() {
     <>
       {/* Availability signal */}
       <motion.div
-        className="flex items-center justify-center gap-2.5 pt-32 md:pt-40 pb-2"
+        className="w-full flex items-center justify-center gap-2.5 pt-32 md:pt-40 pb-2 text-center"
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, delay: 0.2, ease: ZEN }}
       >
-        <span className="w-2 h-2 rounded-full animate-liveRing" style={{ background: '#C9A96E' }} />
+        <span className="w-2 h-2 rounded-full shrink-0 animate-liveRing" style={{ background: '#C9A96E' }} />
         <span
           className="font-sans text-[13px] font-semibold tracking-[0.14em] uppercase"
           style={{ color: '#1A1209' }}
@@ -26,14 +26,14 @@ export default function Hero() {
 
       <motion.header
         id="hero-section"
-        className="text-center pt-10 md:pt-16 pb-16"
+        className="w-full flex flex-col items-center text-center pt-10 md:pt-16 pb-16"
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0, delay: 0.4, ease: ZEN }}
       >
         {/* Logo */}
         <div
-          className="mx-auto mb-8 w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden animate-goldPulse"
+          className="mb-8 w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden animate-goldPulse"
           style={{
             border:     '1px solid rgba(201,169,110,0.35)',
             boxShadow:  '0 0 0 6px rgba(201,169,110,0.08), 0 8px 32px rgba(26,18,9,0.10)',
@@ -58,27 +58,29 @@ export default function Hero() {
           @harmony.headspa
         </p>
 
-        {/* Rating badge */}
-        <div
-          className="inline-flex items-center gap-2.5 rounded-full px-5 py-2.5 mb-10"
-          style={{
-            background: '#FDFCF9',
-            border:     '1px solid rgba(201,169,110,0.28)',
-            boxShadow:  '0 2px 16px rgba(26,18,9,0.06)',
-          }}
-        >
-          <StarIcon className="w-3.5 h-3.5" filled />
-          <span
-            className="font-sans text-sm font-semibold"
-            style={{ color: '#1A1209' }}
+        {/* Rating badge — flex justify-center guarantees centering of inline-flex pill */}
+        <div className="flex justify-center mb-10">
+          <div
+            className="inline-flex items-center gap-2.5 rounded-full px-5 py-2.5"
+            style={{
+              background: '#FDFCF9',
+              border:     '1px solid rgba(201,169,110,0.28)',
+              boxShadow:  '0 2px 16px rgba(26,18,9,0.06)',
+            }}
           >
-            4.6 / 5 · 128+ verifierade recensioner
-          </span>
+            <StarIcon className="w-3.5 h-3.5" filled />
+            <span
+              className="font-sans text-sm font-semibold"
+              style={{ color: '#1A1209' }}
+            >
+              4.6 / 5 · 128+ verifierade recensioner
+            </span>
+          </div>
         </div>
 
         {/* H1 */}
         <h1
-          className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] px-2 mb-6 mx-auto"
+          className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.1] px-2 mb-6 w-full"
           style={{ color: '#1A1209', maxWidth: 820 }}
         >
           Ge din skalp nytt liv i{' '}

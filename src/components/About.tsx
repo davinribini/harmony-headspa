@@ -7,7 +7,7 @@ const ZEN: [number, number, number, number] = [0.22, 1, 0.36, 1]
 export default function About() {
   return (
     <motion.section
-      className="py-24 md:py-32 px-2 max-w-2xl mx-auto text-center"
+      className="w-full flex flex-col items-center text-center py-24 md:py-32 px-2 max-w-2xl mx-auto"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
@@ -28,7 +28,7 @@ export default function About() {
       </h2>
 
       <div
-        className="mx-auto mb-8 rounded-full"
+        className="mb-8 rounded-full"
         style={{ width: 40, height: '1px', background: 'linear-gradient(90deg, transparent, #C9A96E, transparent)' }}
       />
 
